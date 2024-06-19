@@ -13,10 +13,19 @@ body{
 
 
 /* MAIN */
+.container{
+    height: 100vh;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* formattazione contenitore foto */
 .box{
     width: 40%;
-    margin: 450px auto;
     position: relative;
     height: 400px;
     display: none;
@@ -47,10 +56,22 @@ body{
     z-index: 999;
 }
 
-#miniature{
+.miniature{
     height: 400px;
     width: 200px;
     background-color: black;
+}
+
+.mini{
+    display: block;
+    height: 80px;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.current{
+    opacity: 1;
+    border: 1px solid white;
 }
 
 /* classe immagine attiva */
@@ -70,12 +91,12 @@ body{
 
 .fa-caret-up{
     top: 35%;
-    right: 32%;
+    right: 29.5%;
     z-index: 999;
 }
 
 .fa-caret-down{
     bottom: 35%;
-    right: 32%;
+    right: 29.5%;
     z-index: 999;
 }

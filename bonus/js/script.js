@@ -67,24 +67,37 @@ for(let i = 0; i < images.length; i++){
                             <h2 class="titolo">${game.title}</h2>
 
                             <p class="sinossi">${game.text}<p> 
-                        </div>
-                        `;
+                    </div>`;
 
     // inserisco nel dom l'html creato con js
     boxContainer.innerHTML += boxImg;
 
 }
 
+let thumbnail = `  <div class="miniature">
+                        <img class="mini" src="${images[0].image}" alt="">
+                        <img class="mini" src="${images[1].image}" alt="">
+                        <img class="mini" src="${images[2].image}" alt="">
+                        <img class="mini" src="${images[3].image}" alt="">
+                        <img class="mini" src="${images[4].image}" alt="">
+                    </div>`;
+
+boxContainer.innerHTML += thumbnail;
+
 // seleziono tutti i box nel dom
 const items = document.getElementsByClassName("box");
+const miniPics = document.getElementsByClassName("mini");
 // stampo in console
 console.log(items);
+console.log(miniPics);
 
 // creo una variabile per definire quale item è attivo
-let activeItem = 0
+let activeItem = 0;
+let acitvePics = 0;
 
 // aggiungo la classe active al primo item della lista
 items[activeItem].classList.add("active");
+miniPics[acitvePics].classList.add("current");
 
 
 // riferimento alle icone dal dom
@@ -99,27 +112,33 @@ frecciaGiu.addEventListener("click",
         // console.log("hai cliccato la freccia in giù");
 
         // si verifica solo se ci sono ancora elmenti nella lista per poter aumentare l'indice
-        if(activeItem < items.length - 1){
+        if(activeItem < items.length - 1 && acitvePics < miniPics.length - 1){
             // rimuovo la classe acitve dall'item corrente
             items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
 
             // aumneto di uno l'indice della lista item
             activeItem = activeItem + 1;
+            acitvePics = acitvePics + 1;
 
             // aggiungo la classe active al nuovo item
             items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
 
         // se l'indice dell'item attivo è l'ultimo della lista le foto ricominciano dalla prima
-        }else if(activeItem === items.length - 1){
+        }else if(activeItem === items.length - 1 && acitvePics === miniPics.length - 1){
 
             // rimuovo la classe acitve dall'item corrente
             items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
 
             // azzero l'indice della lista
             activeItem = 0;
+            acitvePics = 0;
 
             // aggiungo la classe active al nuovo item
             items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
         }
     }
 )
@@ -130,26 +149,32 @@ frecciaSu.addEventListener("click",
         // console.log("hai cliccato la freccia in su");
 
         // si verifica solo se l'indice dell'item attivo è diverso da 0
-        if(activeItem !== 0){
+        if(activeItem !== 0 && acitvePics !== 0){
             // rimuovo la classe acitve dall'item corrente
             items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
 
             // diminuisco di uno l'indice della lista item
             activeItem = activeItem - 1;
+            acitvePics = acitvePics - 1;
 
             // aggiungo la classe active al nuovo item
             items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
             
         // se l'indice dell'item attivo è il primo della lista le foto ricominciano dall'ultima
-        }else if(activeItem === 0){
+        }else if(activeItem === 0 && acitvePics === 0){
             // rimuovo la classe acitve dall'item corrente
             items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
 
             // porto l'indice all'ultimo item della lista
             activeItem =  items.length - 1;
+            acitvePics = miniPics.length - 1;
 
             // aggiungo la classe active al nuovo item
             items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
         }
     }
 )
