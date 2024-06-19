@@ -179,3 +179,40 @@ frecciaSu.addEventListener("click",
     }
 )
 
+
+// cambio immagine automatico ogni tre scondi
+// nome funzione con intervallo di tempo
+let timing = setInterval(autoplay, 3000);
+
+    // stessa funzione che avvine al click del bottone freccia in su
+    function autoplay(){
+         // si verifica solo se ci sono ancora elmenti nella lista per poter aumentare l'indice
+         if(activeItem < items.length - 1 && acitvePics < miniPics.length - 1){
+            // rimuovo la classe acitve dall'item corrente
+            items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
+
+            // aumneto di uno l'indice della lista item
+            activeItem = activeItem + 1;
+            acitvePics = acitvePics + 1;
+
+            // aggiungo la classe active al nuovo item
+            items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
+
+        // se l'indice dell'item attivo è l'ultimo della lista le foto ricominciano dalla prima
+        }else if(activeItem === items.length - 1 && acitvePics === miniPics.length - 1){
+
+            // rimuovo la classe acitve dall'item corrente
+            items[activeItem].classList.remove("active");
+            miniPics[acitvePics].classList.remove("current");
+
+            // azzero l'indice della lista
+            activeItem = 0;
+            acitvePics = 0;
+
+            // aggiungo la classe active al nuovo item
+            items[activeItem].classList.add("active");
+            miniPics[acitvePics].classList.add("current");
+        }
+    }
