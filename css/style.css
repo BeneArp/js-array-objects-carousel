@@ -29,14 +29,14 @@ img{
     overflow: hidden;
 }
 
-#titolo{
+.titolo{
     position: absolute;
     top: 70%;
     right: 5%;
     z-index: 999;
 }
 
-#sinossi{
+.sinossi{
     text-align: right;
     position: absolute;
     top: 80%;
@@ -61,14 +61,12 @@ img{
 
 .fa-caret-up{
     top: 35%;
-    left: 50%;
-    transform: translate(-50%);
+    right: 32%;
     z-index: 999;
 }
 
 .fa-caret-down{
     bottom: 35%;
-    left: 50%;
-    transform: translate(-50%);
+    right: 32%;
     z-index: 999;
 }

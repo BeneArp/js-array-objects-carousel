@@ -50,29 +50,27 @@ const images = [
 
 // prendo dal dom il container in cui inserire i div
 const boxContainer = document.querySelector(".container");
-const title = document.getElementById("titolo");
-const text = document.getElementById("sinossi");
 
 
 
-// ciclo per creare un div con l'immagine contenuta nell'arrey, si ripete per tutti gli elementi dell'array
-// prendo tutto il contenuto dell'array
-for(let i = 0; i < gamesCover.length; i++){
+for(let i = 0; i < images.length; i++){
 
-    // stampo in console il contenuto dell'array
-    // console.log(gamesCover[i]);
+    // prendo gli oggetti dell'array a partire dal primo
+    let game = images[i];
 
-    // salvo quello che trovo nell'array in una variabile
-   let imgArray = i;
-   console.log(gamesCover[imgArray]);
+    // console.log(game);
 
     // inner html con immagine corrispondente associata grazie al ciclo
-    let boxContent = `  <div class="box">
-                            <img src="${gamesCover[imgArray]}" alt="">
+    let boxImg = `  <div class="box">
+                            <img src="${game.image}" alt="">
+
+                            <h2 class="titolo">${game.title}</h2>
+
+                            <p class="sinossi">${game.text}<p> 
                         </div>`;
-    
+
     // inserisco nel dom l'html creato con js
-    boxContainer.innerHTML += boxContent;
+    boxContainer.innerHTML += boxImg;
 
 }
 
