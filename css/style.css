@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* generali */
+body{
+    background-color: lightslategray;
+    color: white;
+    font-size: 20px;
+}
+
+img{
+    object-fit: cover;
+    object-position: center;
+    height: 400px;
+    width: 100%;
+}
+
+/* MAIN */
+/* formattazione contenitore foto */
+.box{
+    width: 40%;
+    margin: 450px auto;
+    position: relative;
+    height: 400px;
+    display: none;
+    overflow: hidden;
+}
+
+#titolo{
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    z-index: 999;
+}
+
+#sinossi{
+    text-align: right;
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    z-index: 999;
+}
+
+/* classe immagine attiva */
+.active{
+    display: block;
+}
+
+/* formattazione frecce */
+.fa-solid{
+    font-size: 25px;
+    color: white;
+    background-color: rgba(122, 122, 122, 0.5);
+    padding: 0.2em 0.4em;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.fa-caret-up{
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+}
+
+.fa-caret-down{
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+}
